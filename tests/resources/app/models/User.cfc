@@ -47,4 +47,10 @@ component quick {
         return hasOne( "Post", "user_id" ).latest();
     }
 
+    function scopeWithPostsCreatedAfter( query, date ) {
+        return this.with( { "posts" = function( q ) {
+            return q.where( "createdDate", ">", date );
+        } } );
+    }
+
 }

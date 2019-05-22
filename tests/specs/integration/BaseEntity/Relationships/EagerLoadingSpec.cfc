@@ -273,6 +273,19 @@ component extends="tests.resources.ModuleIntegrationSpec" appMapping="/app" {
 
                 expect( variables.queries ).toHaveLength( 3, "Only three queries should have been executed." );
             } );
+
+            it( "can use find on constrained eager loaded relationships", function() {
+                var elpete = getInstance( "User" )
+                    .withPostsCreatedAfter( createDate( 2017, 07, 29 ) )
+                    .findOrFail( 1 );
+
+                expect( elpete.getUsername() ).toBe( "elpete" );
+                expect( elpete.getPosts() ).toBeArray();
+                expect( elpete.getPosts() ).toHaveLength( 1, "One post should belong to elpete" );
+                expect( elpete.getPosts()[ 1 ].keyValue() ).toBe( 523526 );
+
+                expect( variables.queries ).toHaveLength( 2, "Only two queries should have been executed." );
+            } );
         } );
     }
 

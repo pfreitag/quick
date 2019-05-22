@@ -304,7 +304,7 @@ component accessors="true" {
         if ( structIsEmpty( data ) ) {
             return;
         }
-        return tap( loadEntity( data ), function( entity ) {
+        return tap( eagerLoadRelations( [ loadEntity( data ) ] )[ 1 ], function( entity ) {
             fireEvent( "postLoad", { entity = entity } );
         } );
     }

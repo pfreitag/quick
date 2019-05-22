@@ -81,7 +81,7 @@ component {
             INSERT INTO `my_posts` (`post_pk`, `user_id`, `body`, `created_date`, `modified_date`) VALUES (1245, 1, 'My awesome post body', '2017-07-28 02:07:00', '2017-07-28 02:07:00')
         " );
         queryExecute( "
-            INSERT INTO `my_posts` (`post_pk`, `user_id`, `body`, `created_date`, `modified_date`) VALUES (523526, 1, 'My second awesome post body', '2017-07-28 02:07:36', '2017-07-28 02:07:36')
+            INSERT INTO `my_posts` (`post_pk`, `user_id`, `body`, `created_date`, `modified_date`) VALUES (523526, 1, 'My second awesome post body', '2017-07-30 02:07:36', '2017-07-28 02:07:36')
         " );
         queryExecute( "
             INSERT INTO `my_posts` (`post_pk`, `user_id`, `body`, `created_date`, `modified_date`) VALUES (7777, NULL, 'My post with no author', '2017-07-28 02:07:36', '2017-07-28 02:07:36')
